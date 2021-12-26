@@ -42,13 +42,15 @@ class FileTableViewCell: UITableViewCell {
         self.addSubview(fileNameLabel)
         
         let constraints = [fileNameLabel.leadingAnchor.constraint(equalTo:
-                                                            self.safeAreaLayoutGuide.leadingAnchor),
+                                                        self.safeAreaLayoutGuide.leadingAnchor,
+                                                                 constant: 15),
                            fileNameLabel.trailingAnchor.constraint(equalTo:
-                                                            self.safeAreaLayoutGuide.trailingAnchor),
+                                                        self.safeAreaLayoutGuide.trailingAnchor,
+                                                                  constant: -15),
                            fileNameLabel.topAnchor.constraint(equalTo:
-                                                            self.safeAreaLayoutGuide.topAnchor),
+                                                        self.safeAreaLayoutGuide.topAnchor),
                            fileNameLabel.bottomAnchor.constraint(equalTo:
-                                                            self.safeAreaLayoutGuide.bottomAnchor)]
+                                                        self.safeAreaLayoutGuide.bottomAnchor)]
         
         NSLayoutConstraint.activate(constraints)
     }

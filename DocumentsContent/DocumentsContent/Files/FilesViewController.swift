@@ -9,11 +9,27 @@ import UIKit
 
 class FilesViewController: UIViewController {
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        DispatchQueue.main.async {
+
+            UserDefaults.standard.set(true, forKey: "sorted")
+
+            NotificationCenter.default.post(name: NSNotification.Name("sorted"), object: nil)
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private let cellId = "file"
     private let fileManager = FileManager.default
     
     private lazy var documentURL = try! fileManager.url(for: .documentDirectory, in: .userDomainMask,
                                                        appropriateFor: nil, create: false)
+    private lazy var notSortContent = content
     
     private lazy var content = try! fileManager.contentsOfDirectory(at: documentURL,
                                                                     includingPropertiesForKeys: nil,
@@ -46,10 +62,6 @@ class FilesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .white
-        self.navigationController?.navigationBar.isHidden = false
-        self.navigationItem.title = "Files"
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(FileTableViewCell.self, forCellReuseIdentifier: cellId)
@@ -57,9 +69,31 @@ class FilesViewController: UIViewController {
         imagePicker.delegate = self
         
         setupViews()
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("sorted"),
+                                               object: nil, queue: nil) { [weak self] _ in
+            
+            if UserDefaults.standard.bool(forKey: "sorted") {
+                
+                self?.content.sort { $0.absoluteString > $1.absoluteString }
+                
+            } else {
+                
+                self?.content = self?.notSortContent ?? []
+                
+            }
+        }
     }
     
     private func setupViews() {
+        
+        self.view.backgroundColor = .white
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationItem.title = "Files"
+        self.title = "Files"
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        
         self.view.addSubview(tableView)
         
         let constraints = [tableView.topAnchor.constraint(equalTo:
@@ -125,6 +159,8 @@ extension FilesViewController: UIImagePickerControllerDelegate, UINavigationCont
             fileManager.createFile(atPath: newURL.path, contents: data, attributes: nil)
             
             content.append(newURL)
+            
+            notSortContent.append(newURL)
         }
         
         imagePicker.dismiss(animated: true)
@@ -132,5 +168,9 @@ extension FilesViewController: UIImagePickerControllerDelegate, UINavigationCont
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

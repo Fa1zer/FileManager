@@ -7,13 +7,12 @@
 
 import UIKit
 
-class NavigationController: UINavigationController {
+class FirstNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.viewControllers = [FilesViewController()]
+        self.viewControllers = [LogInViewController()]
         self.title = "Files"
-        
     }
 }

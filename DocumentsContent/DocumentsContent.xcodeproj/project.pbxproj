@@ -12,8 +12,14 @@
 		E387A02A275BCF6B002BFFF7 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387A029275BCF6B002BFFF7 /* FilesViewController.swift */; };
 		E387A02F275BCF6D002BFFF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E387A02E275BCF6D002BFFF7 /* Assets.xcassets */; };
 		E387A032275BCF6D002BFFF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E387A030275BCF6D002BFFF7 /* LaunchScreen.storyboard */; };
-		E387A03A275BD04E002BFFF7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387A039275BD04E002BFFF7 /* NavigationController.swift */; };
+		E387A03A275BD04E002BFFF7 /* FirstNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387A039275BD04E002BFFF7 /* FirstNavigationController.swift */; };
 		E387A03F275D495D002BFFF7 /* FileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387A03E275D495D002BFFF7 /* FileTableViewCell.swift */; };
+		E3BE8254276A5916006E3BC6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BE8253276A5916006E3BC6 /* TabBarController.swift */; };
+		E3BE8257276A5A72006E3BC6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BE8256276A5A72006E3BC6 /* SettingsViewController.swift */; };
+		E3BE8259276A65F4006E3BC6 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BE8258276A65F4006E3BC6 /* LogInViewController.swift */; };
+		E3BE825D276D1580006E3BC6 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E3BE825C276D1580006E3BC6 /* KeychainAccess */; };
+		E3BE8261276F9196006E3BC6 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BE8260276F9196006E3BC6 /* SettingsTableViewCell.swift */; };
+		E3BE8263276F9ABE006E3BC6 /* SecondNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BE8262276F9ABE006E3BC6 /* SecondNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +30,13 @@
 		E387A02E275BCF6D002BFFF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E387A031275BCF6D002BFFF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E387A033275BCF6D002BFFF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E387A039275BD04E002BFFF7 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		E387A039275BD04E002BFFF7 /* FirstNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstNavigationController.swift; sourceTree = "<group>"; };
 		E387A03E275D495D002BFFF7 /* FileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTableViewCell.swift; sourceTree = "<group>"; };
+		E3BE8253276A5916006E3BC6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E3BE8256276A5A72006E3BC6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E3BE8258276A65F4006E3BC6 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		E3BE8260276F9196006E3BC6 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		E3BE8262276F9ABE006E3BC6 /* SecondNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3BE825D276D1580006E3BC6 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +70,8 @@
 		E387A024275BCF6B002BFFF7 /* DocumentsContent */ = {
 			isa = PBXGroup;
 			children = (
+				E3BE825A276A65F9006E3BC6 /* LogIn */,
+				E3BE8255276A5A45006E3BC6 /* Settings */,
 				E387A03D275BD2C5002BFFF7 /* Files */,
 				E387A03C275BD2AA002BFFF7 /* Navigation */,
 				E387A03B275BD23C002BFFF7 /* SupportingFiles */,
@@ -80,7 +94,9 @@
 		E387A03C275BD2AA002BFFF7 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				E387A039275BD04E002BFFF7 /* NavigationController.swift */,
+				E387A039275BD04E002BFFF7 /* FirstNavigationController.swift */,
+				E3BE8262276F9ABE006E3BC6 /* SecondNavigationController.swift */,
+				E3BE8253276A5916006E3BC6 /* TabBarController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -92,6 +108,23 @@
 				E387A03E275D495D002BFFF7 /* FileTableViewCell.swift */,
 			);
 			path = Files;
+			sourceTree = "<group>";
+		};
+		E3BE8255276A5A45006E3BC6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E3BE8256276A5A72006E3BC6 /* SettingsViewController.swift */,
+				E3BE8260276F9196006E3BC6 /* SettingsTableViewCell.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E3BE825A276A65F9006E3BC6 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				E3BE8258276A65F4006E3BC6 /* LogInViewController.swift */,
+			);
+			path = LogIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +143,9 @@
 			dependencies = (
 			);
 			name = DocumentsContent;
+			packageProductDependencies = (
+				E3BE825C276D1580006E3BC6 /* KeychainAccess */,
+			);
 			productName = DocumentsContent;
 			productReference = E387A022275BCF6B002BFFF7 /* DocumentsContent.app */;
 			productType = "com.apple.product-type.application";
@@ -138,6 +174,9 @@
 				Base,
 			);
 			mainGroup = E387A019275BCF6B002BFFF7;
+			packageReferences = (
+				E3BE825B276D1580006E3BC6 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = E387A023275BCF6B002BFFF7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -165,8 +204,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E387A02A275BCF6B002BFFF7 /* FilesViewController.swift in Sources */,
-				E387A03A275BD04E002BFFF7 /* NavigationController.swift in Sources */,
+				E387A03A275BD04E002BFFF7 /* FirstNavigationController.swift in Sources */,
+				E3BE8261276F9196006E3BC6 /* SettingsTableViewCell.swift in Sources */,
+				E3BE8257276A5A72006E3BC6 /* SettingsViewController.swift in Sources */,
 				E387A03F275D495D002BFFF7 /* FileTableViewCell.swift in Sources */,
+				E3BE8259276A65F4006E3BC6 /* LogInViewController.swift in Sources */,
+				E3BE8263276F9ABE006E3BC6 /* SecondNavigationController.swift in Sources */,
+				E3BE8254276A5916006E3BC6 /* TabBarController.swift in Sources */,
 				E387A026275BCF6B002BFFF7 /* AppDelegate.swift in Sources */,
 				E387A028275BCF6B002BFFF7 /* SceneDelegate.swift in Sources */,
 			);
@@ -376,6 +420,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E3BE825B276D1580006E3BC6 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E3BE825C276D1580006E3BC6 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3BE825B276D1580006E3BC6 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E387A01A275BCF6B002BFFF7 /* Project object */;
 }
